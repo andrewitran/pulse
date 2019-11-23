@@ -29,7 +29,7 @@ def extract_ppg(ppg):
                 if (ppg[i] > t * np.amax(ppg[window_start : window_end + 1]) + t * window_mean and i >= window_start and i <= window_end and ppg[i] == np.amax(ppg[window_start : window_end + 1])):
                     peaks.append(i)
             else:
-                if (ppg[i] > t * np.amax(ppg[window_start : window_end + 1]) + t * window_mean and i - peaks[j] > window_end and i >= window_start and i <= window_end and ppg[i] == np.amax(ppg[window_start : window_end + 1])):
+                if (ppg[i] > t * np.amax(ppg[window_start : window_end + 1]) + t * window_mean and i - peaks[j] > 400 and i >= window_start and i <= window_end and ppg[i] == np.amax(ppg[window_start : window_end + 1])):
                     peaks.append(i)
                     j += 1
 
